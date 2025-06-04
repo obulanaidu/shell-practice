@@ -5,6 +5,7 @@ uSERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
     echo "error:: please run the script with root access"
+    exit 1 # give other than 0 up to 127
 else
     echo " you are running with root acess"
 fi
@@ -16,4 +17,5 @@ then
     echo "mysql is success"
 else
     echo "mysql is failure"
+    exit 1
 fi
