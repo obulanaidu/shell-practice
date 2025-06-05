@@ -9,7 +9,7 @@ else
 fi
 # validate takes input as exit status,what the command to install
 VALIDATE(){
-    if ( $1 -eq 0 ) # package take condition positive
+    if [ $? -ne 0 ] # package take condition positive
     then
         echo "$2 installation is success" 
     else
@@ -18,7 +18,7 @@ VALIDATE(){
     fi
 }
 dnf list installed mysql
-if ( $? -ne 0 )
+if [ $? -ne 0 ]
 then
     echo "give error ..mysql is going to install"
     dnf install mysql -y
@@ -28,8 +28,7 @@ else
 fi
 
 dnf list installed python3
-
-if ( $? -ne 0 )
+if [ $? -ne 0 ]
 then
     echo "give error ..python3 is going to install"
     dnf install nginx -y
@@ -39,8 +38,7 @@ else
 fi
 
 dnf list installed nginx
-
-if ( $? -ne 0 )
+if [ $? -ne 0 ]
 then
     echo "give error ..nginx is going to install"
     dnf install nginx -y
