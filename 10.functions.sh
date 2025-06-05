@@ -7,7 +7,7 @@ then
 else
     echo "you are running with root acces"
 fi
-
+# validate takes input as exit status,what the command to install
 VALIDATE(){
     if ( $1 -eq 0 ) # package take condition positive
     then
