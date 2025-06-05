@@ -1,6 +1,6 @@
 USERID=$(id -u)
 
-if ( $USERID -ne 0 )
+if [ $USERID -ne 0 ]
 then
     echo "give error and run the script with root access"
     exit 1 # give other than 0 up to 127
