@@ -14,7 +14,7 @@ for i in {2..100..2}
 do
   echo $i
 done
-for i in {3..97..2}
+for i in {2..97..2}
 do
   echo $i
 done
