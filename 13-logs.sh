@@ -31,7 +31,7 @@ VALIDATE(){
         exit 1
     fi
 }
-dnf list installed mysql | tee -a $LOG_FILE
+dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo "give error ..mysql is going to install" | tee -a $LOG_FILE
@@ -41,21 +41,21 @@ else
     echo -e "mysql is already $Y installed nothing to do $N" | tee -a $LOG_FILE
 fi
 
-dnf list installed python3 | tee -a $LOG_FILE
+dnf list installed python3 &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo "give error ..python3 is going to install" | tee -a $LOG_FILE
-    dnf install nginx -y | tee -a $LOG_FILE
+    dnf install nginx -y &>>$LOG_FILE
     VALIDATE $? "python3"
 else
     echo -e "python3 is already $Y installed nothing to do $N" | tee -a $LOG_FILE
 fi
 
-dnf list installed nginx | tee -a $LOG_FILE
+dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo "give error ..nginx is going to install" | tee -a $LOG_FILE
-    dnf install nginx -y | tee -a $LOG_FILE
+    dnf install nginx -y &>>$LOG_FILE
     VALIDATE $? "nginx"
 else
     echo -e "nginx is already $Y installed nothing to do $N" | tee -a $LOG_FILE
