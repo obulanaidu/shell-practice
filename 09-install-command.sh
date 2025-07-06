@@ -9,6 +9,8 @@ then
 else
     echo " you are running with root acess"
 fi
+# check already installed or not.if installed $? is 0
+# if not installed $? -ne 0 then expression is true so now install
 
 dnf list installed mysql
 
@@ -16,7 +18,7 @@ if [ $? -ne 0 ]
 then 
     echo "mysql no installed..going to install"
     dnf install mysql -y
-    if [ $USERID -eq 0 ]
+    if [ $? -eq 0 ]
     then
        echo "installing mysql is success"
     else

@@ -1,0 +1,16 @@
+- firstname: obulanaidu
+  lastname: G
+  email: obul@gmail.com
+  adresses:
+  - type: perm
+    doorno: 123
+    street: rajajinagar
+  - type: Current
+    doorno: 123
+    street: rajajinagar
+    
+- name: ping the server
+  hosts: frontend
+  tasks: 
+  - name: ping the server
+    ansible.builtin.debug:

@@ -11,7 +11,7 @@ else
 fi
 # validate takes input as exit status,what the command to install
 VALIDATE(){
-    if [ $? -eq 0 ] # package take condition positive
+    if [ $1 -eq 0 ] # package take condition positive
     then
         echo "$2 installation is success" 
     else
