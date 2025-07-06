@@ -10,7 +10,7 @@ do
     echo $i
 done
 
-for i in {5..100..5}
+for i in {2..100}
 do
-  echo$i
+  echo $i
 done
